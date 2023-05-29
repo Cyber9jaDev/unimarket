@@ -52,10 +52,10 @@ const UserAds = ({ userAds, isLoading, hasError, screenWidth }) => {
 
       <div className="ads-container pt-3">
         { 
-        // isLoading ? <Loading /> 
-          // : !isLoading && hasError ? <Error /> 
-          // : 
-          userAds?.map(ad => <div key={ad._id} className="ad-wrapper">
+        isLoading ? <Loading /> 
+          : !isLoading && hasError ? <Error /> 
+          : 
+          userAds.map(ad => <div key={ad._id} className="ad-wrapper">
           <div className="img-container">
             <div className="img-wrapper">
               <img src={ad ? ad.images[0].url : img } alt="" className="img" />

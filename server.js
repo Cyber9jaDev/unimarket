@@ -33,26 +33,18 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json({limit: '50mb'}));
-// app.use(express.static(path.resolve(__dirname, './client/build')));
 
 
-// JOHN SMILGA
-// if(process.env.NODE_ENV === 'production'){
-//   app.use(express.static(path.resolve(__dirname, './client/build')));
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
-//   });
-// }
-
+// JOHN SMILGA, when ready to deploy
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.resolve(__dirname, './client/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+  });
+}
 
 // morgan middleware, only runs in development mode
 if(process.env.NODE_ENV !== 'production'){ app.use(morgan('dev')) }
-
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
-// });
-
 
 io.on('connection', (socket) => {
   // Add new user to socket/ users list 

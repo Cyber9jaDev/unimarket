@@ -31,6 +31,7 @@ const Profile = () => {
     setHasError(false);
     try {
       const { data } = await UsersService.getUserAds(currentUser.userId);
+      console.log(data);
       setUserAds(data);
     } catch (error) {
       setHasError(true);

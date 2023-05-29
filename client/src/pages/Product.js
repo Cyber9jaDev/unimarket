@@ -56,7 +56,6 @@ const Product = () => {
     // dispatch({ type: FIND_BY_CATEGORY_BEGINS });
     setHasError(false);
     setIsLoading(true);
-    console.log('ewewew');
     try {
       // For Mobile Screen
       if(screenWidth < 992 && filterModalIsOpen === true ){
@@ -70,8 +69,6 @@ const Product = () => {
         searchText: values.searchText
       });
       
-      console.log('ewewew');
-
       console.log(data);
       if (data) {
         setValues((prev) => ({ ...prev, products: data.products, totalPages: data.totalPages }));
