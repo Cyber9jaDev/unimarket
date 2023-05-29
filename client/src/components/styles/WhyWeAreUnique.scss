@@ -62,11 +62,16 @@
     opacity: 0.8;
   }
 
-  svg{
+  .fa{
     color: lightseagreen;
     font-size: 5rem;
     width: 100px;
     height: 100px;
+  }
+
+  .fa:hover{
+    opacity: 0.5;
+    transition: opacity 1.5 ease;
   }
 
   .icon-2{
