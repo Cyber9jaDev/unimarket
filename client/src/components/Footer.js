@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import './styles/footer.scss';
 
 const Footer = () => {
@@ -9,11 +7,11 @@ const Footer = () => {
     <section id='footer'>
         <footer className='container'>
           <div className="icons-container">
-            <a className="icon-wrapper" href="https://www.facebook.com"><FontAwesomeIcon icon={faFacebookF} className='icon' /></a>
-            <a className="icon-wrapper" href="https://www.twitter.com"><FontAwesomeIcon icon={faTwitter} className='icon' /></a>
-            <a className="icon-wrapper" href="https://www.instagram,.com"><FontAwesomeIcon icon={faInstagram} className='icon' /></a>
-            <a className="icon-wrapper" href="https://www.linkedin.com"><FontAwesomeIcon icon={faLinkedinIn} className='icon' /></a>
-            <a className="icon-wrapper" href="https://www.youtube.com"><FontAwesomeIcon icon={faYoutube} className='icon' /></a>
+            <a className="icon-wrapper" href="https://www.facebook.com"><i class="fa-brands fa-facebook-f icon"></i></a>
+            <a className="icon-wrapper" href="https://www.twitter.com"><i class="fa-brands fa-twitter icon"></i></a>
+            <a className="icon-wrapper" href="https://www.instagram,.com"><i class="fa-brands fa-instagram icon"></i></a>
+            <a className="icon-wrapper" href="https://www.linkedin.com"><i class="fa-brands fa-linkedin-in icon"></i></a>
+            <a className="icon-wrapper" href="https://www.youtube.com"><i class="fa-brands fa-youtube icon"></i></a>
           </div>
           <p className="copyright">&copy; Unimarket Private Limited, {new Date().getFullYear()}.</p> 
           <div className='terms-wrapper d-flex flex-row justify-content-center'>

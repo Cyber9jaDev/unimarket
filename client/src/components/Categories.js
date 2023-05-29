@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/categories.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { categories } from "../utilities/utils";
 import { useAppContext } from "../contexts/AppContext";
 import { SET_ACTIVE_CATEGORY } from "../contexts/Actions";
@@ -23,7 +22,7 @@ const Categories = () => {
               <div onClick={() => { updateCategory(category.value); }} key={index} className="category-container">
                 <Link to="/categories" className="category-link">
                   <div className={`icon-container ${category.value}`}> 
-                    <FontAwesomeIcon icon={category.icon} className="icon" />
+                      <i className={`${category.icon} icon`}></i>
                   </div>
                   <h3 className="category-title">{category.label}</h3>
                 </Link>

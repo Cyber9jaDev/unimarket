@@ -1,12 +1,10 @@
 import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import './styles/profile.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import avatar from '../assets/avatar.jpg';
 import UsersService from '../services/UsersService';
 import UserAds from '../components/UserAds';
 import Menu from '../utilities/menu';
 import Settings from '../components/Settings';
-import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import ComingSoon from '../components/ComingSoon';
 // import Loading from '../components/Loading';
 
@@ -66,7 +64,7 @@ const Profile = () => {
                     setHideActiveMenu(false);
                   }} key={index} name={item.name} className="menu-wrapper">
                     <div className="icon-wrapper">
-                      <FontAwesomeIcon className='icon' icon={item.icon} />
+                      <i className={`${item.icon} icon`}></i>
                     </div>
                     <span>{item.label}</span>
                   </div>
@@ -77,9 +75,9 @@ const Profile = () => {
           {/* Right */}
           <div className={`right-container ${ screenWidth < 768 && !hideActiveMenu ? '' : 'hide'}`}>
             { screenWidth < 768 && <div className="arrow-icon-wrapper my-3">
-              <FontAwesomeIcon onClick={() => setHideActiveMenu(true)} icon={faChevronCircleLeft} />
+              <i class="fa-solid fa-circle-chevron-left" onClick={() => setHideActiveMenu(true)}></i>
             </div> }
-            {/* { activeMenu === 'adverts' && <UserAds hideActiveMenu={hideActiveMenu} activeMenu={activeMenu} screenWidth={screenWidth} isLoading={isLoading} hasError={hasError}  userAds={userAds}/> } */}
+            { activeMenu === 'adverts' && <UserAds hideActiveMenu={hideActiveMenu} activeMenu={activeMenu} screenWidth={screenWidth} isLoading={isLoading} hasError={hasError}  userAds={userAds}/> }
             { activeMenu === 'settings' && <Settings hasError={hasError} isLoading={isLoading} currentUser={currentUser} /> }
             { activeMenu === 'feedback' && <ComingSoon hasError={hasError} isLoading={isLoading} currentUser={currentUser} /> }
             { activeMenu === 'performance' && <ComingSoon hasError={hasError} isLoading={isLoading} currentUser={currentUser} /> }

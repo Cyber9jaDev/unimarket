@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { faChevronCircleLeft, faChevronCircleRight, faLocationDot, faPhoneFlip, faMessage } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import formatNaira from "format-to-naira";
 import './styles/product-preview.scss';
 import moment from 'moment';
@@ -13,7 +11,6 @@ import ChatService from '../services/ChatService';
 import { useAppContext } from '../contexts/AppContext';
 import { HIDE_CHAT_BOX, SET_CURRENT_CHAT } from '../contexts/Actions';
 import axios from 'axios';
-import UsersService from '../services/UsersService';
 
 const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -99,7 +96,7 @@ const ProductPreview = () => {
           <div className="container product-wrapper">
               
               <div className="address-container">
-                <FontAwesomeIcon className='location-icon' icon={faLocationDot} />
+                <i class="fa-solid fa-location-dot location-icon"></i>
                 {product.city && <p className="city">{product.city}</p>}
                 <div className="v-bar"></div>
                 {product.createdAt && <p className="date">{moment(product.createdAt).format('dddd, Do MMM YYYY')}</p>}
@@ -107,7 +104,7 @@ const ProductPreview = () => {
 
               <div className="image-block">
                 <div className="icon-container icon-left-container">
-                  <FontAwesomeIcon onClick={() => setCurrentIndex(current => currentIndex === 0 ? current : current - 1)} className='icon' icon={faChevronCircleLeft}/>
+                  <i onClick={() => setCurrentIndex(current => currentIndex === 0 ? current : current - 1)} className="fa-solid fa-circle-chevron-left icon"></i>
                 </div>
 
                 <div className="lg-product-img-wrapper">
@@ -117,7 +114,7 @@ const ProductPreview = () => {
                 </div>
 
                 <div className="icon-container icon-right-container">
-                  <FontAwesomeIcon onClick={() => setCurrentIndex( current => currentIndex === images.length - 1 ? current : current + 1 ) } className='icon' icon={faChevronCircleRight}/>
+                  <i onClick={() => setCurrentIndex( current => currentIndex === images.length - 1 ? current : current + 1 ) } class="fa-solid fa-circle-chevron-right icon"></i>
                 </div>
               </div>
 
@@ -184,13 +181,13 @@ const ProductPreview = () => {
             <div className="contact-details-container">
               <a href='tel:08062128170' className="contact-details">
                 <div className="phone-icon-container">
-                  <FontAwesomeIcon className='phone-icon' icon={faPhoneFlip} />
+                <i className="fa-solid fa-phone-flip phone-icon"></i>
                 </div>
                 <span className='call-text'>Call</span>
               </a>
               <span onClick={openChatModal} className="contact-details">
                 <div className="message-icon-container">
-                  <FontAwesomeIcon className='message-icon' icon={faMessage} />
+                <i class="fa-solid fa-message message-icon"></i>
                 </div>
                 <span className='chat-text'>Chat</span>
               </span>

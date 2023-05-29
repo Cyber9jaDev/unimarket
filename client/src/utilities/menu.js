@@ -1,31 +1,29 @@
-import { faList, faGear, faCommentDots, faChartSimple, faBell } from '@fortawesome/free-solid-svg-icons';
-
 export default function Menu (){
   return [
     {
       label: 'My adverts',
       name: 'adverts',
-      icon: faList
+      icon: "fa-solid fa-list"
     },
     {
       label: 'Performance',
       name: 'performance',
-      icon: faChartSimple
+      icon: "fa-solid fa-chart-simple"
     },
     {
       label: 'Feedback',
       name: 'feedback',
-      icon: faCommentDots
+      icon: "fa-solid fa-comment-dots"
     },
     {
       label: 'Notifications',
       name: 'notifications',
-      icon: faBell
+      icon: "fa-solid fa-bell"
     },
     {
       label: 'Settings',
       name: 'settings',
-      icon: faGear
+      icon: "fa-solid fa-gear"
     },
   ]
 }

@@ -1,56 +1,55 @@
 import toast from 'react-hot-toast';
-import { faMobileScreen, faLaptop, faCar, faMotorcycle, faChair, faPaw, faBookOpen, faShirt, faHome, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import schools from './schools';
 
 export const categories = [
     {
       value: 'all',
-      icon: faCartShopping,
+      icon: 'fa-solid fa-cart-shopping',
       label: 'All Categories',
     },  
     {
       value: 'mobile',
-      icon: faMobileScreen,
+      icon: 'fa-solid fa-mobile-screen-button',
       label: 'Mobile Phones',
     },
     {
       value: 'computer',
-      icon: faLaptop,
+      icon: 'fa-solid fa-laptop',
       label: 'Laptop and Accessories'
     },
     {
       value: 'car',
-      icon: faCar,
+      icon: 'fa-solid fa-car',
       label: 'Cars'
     },
     {
       value: 'bike',
-      icon: faMotorcycle,
+      icon: 'fa-solid fa-motorcycle',
       label: 'Bikes'
     },
     {
       value: 'furniture',
-      icon: faChair,
+      icon: 'fa-solid fa-chair',
       label: 'Furnitures'
     },
     {
       value: 'pet',
-      icon: faPaw,
+      icon: 'fa-solid fa-paw',
       label: 'Pets'
     },
     {
       value: 'book',
-      icon: faBookOpen,
+      icon: 'fa-solid fa-book',
       label: 'Books'
     },
     {
       value: 'fashion',
-      icon: faShirt,
+      icon: 'fa-solid fa-shirt',
       label: 'Fashion'
     },
     {
       value: 'accommodation',
-      icon: faHome,
+      icon: 'fa-solid fa-home',
       label: 'Accommodation'
     },
   ]

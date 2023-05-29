@@ -6,12 +6,10 @@ import { useParams } from "react-router-dom";
 import Select from "react-select";
 import { categories, findCategory, findCategoryLabel, findSchool } from "../utilities/utils";
 import schools from "../utilities/schools";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faTableCells, faFilter, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import RangeSlider from "react-range-slider-input";
 import ProductService from "../services/ProductService";
 import { useAppContext } from "../contexts/AppContext";
-import { FIND_BY_CATEGORY_BEGINS, FIND_BY_CATEGORY_ERROR, FIND_BY_CATEGORY_SUCCESS, OPEN_FILTER_MODAL } from "../contexts/Actions";
+import { OPEN_FILTER_MODAL } from "../contexts/Actions";
 import formatNaira from "format-to-naira";
 import sortBy from "../utilities/sortby";
 import Empty from "../components/Empty";
@@ -133,7 +131,7 @@ const Product = () => {
             <div className={`col-sm-12 col-lg-3 mt-2 ${screenWidth < 992 && filterModalIsOpen ? 'filter-container' : 'hide'}`}>
               { screenWidth < 992 && filterModalIsOpen && <div className="arrow-icon-container py-2 mb-2 mt-1">
                   <div className="arrow-icon-wrapper" onClick={ () => { dispatch({ type: OPEN_FILTER_MODAL, payload:{ value: false }}) }}>
-                    <FontAwesomeIcon className="arrow-icon" icon={faChevronLeft}/>
+                  <i class="fa-solid fa-chevron-left arrow-icon"></i>
                     <span className='my-auto fs-4'>back</span>
                   </div>
                 </div>
@@ -208,8 +206,10 @@ const Product = () => {
                   <div className="row">
                     <div className="col-6 d-flex align-items-center">
                       <label className="view-color fs-5">View: </label>
-                      <span className="mx-3"><FontAwesomeIcon style={{color: view === 'grid' ? 'green' : 'lightgrey'}} onClick={() => setView('grid')} className="icon" icon={faTableCells} /></span>
-                      <span className=""><FontAwesomeIcon style={{color: view === 'list' ? 'green' : 'lightgrey'}} onClick={() => setView('list')} className="icon" icon={faList} /></span>
+                      <span className="mx-3"><i onClick={() => setView('grid')} style={{color: view === 'grid' ? 'green' : 'lightgrey'}} className="fa-solid fa-table-cells icon"></i></span>
+                      {/* <span className="mx-3"><FontAwesomeIcon style={{color: view === 'grid' ? 'green' : 'lightgrey'}} onClick={() => setView('grid')} className="icon" icon={faTableCells} /></span> */}
+                      {/* <span className=""><FontAwesomeIcon style={{color: view === 'list' ? 'green' : 'lightgrey'}} onClick={() => setView('list')} className="icon" icon={faList} /></span> */}
+                      <span className=""><i onClick={() => setView('list')} style={{color: view === 'list' ? 'green' : 'lightgrey'}} className="fa-solid fa-list icon"></i></span>
                     </div>
                     
                     {/* Filter button for mobile screen */}
@@ -218,7 +218,7 @@ const Product = () => {
                         <div className="filter-text-wrapper border px-3 py-1" onClick={() => {
                           dispatch({ type: OPEN_FILTER_MODAL, payload: { value: true }});
                         }}>
-                          <span><FontAwesomeIcon className="icon" icon={faFilter}/></span>
+                          <span><i className="fa-solid fa-filter icon"></i></span>
                           <span className="filter-text ms-2 fs-4">Filter</span>
                         </div>
                       </div> 

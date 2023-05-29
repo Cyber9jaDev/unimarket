@@ -1,8 +1,6 @@
 import React from 'react';
 import './styles/pagination.scss';
 import { useAppContext } from '../contexts/AppContext';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const Pagination = ( { setValues, totalPages, page } ) => {
@@ -36,9 +34,9 @@ const Pagination = ( { setValues, totalPages, page } ) => {
       { !isLoading && totalPages > 1 && <section id='pagination'>
         <nav aria-label="navigation">
           <ul className="pagination"> 
-            <li><FontAwesomeIcon className='pagination-icon chevron' icon={faChevronLeft} onClick={handlePrevPage}/></li>
+            <li><i onClick={handlePrevPage} className="fa-solid fa-chevron-left pagination-icon chevron"></i></li>
             <li><strong>{page} / {totalPages}</strong></li>
-            <li><FontAwesomeIcon className='pagination-icon chevron' icon={faChevronRight} onClick={handleNextPage}/></li>
+            <li><i onClick={handleNextPage} className="fa-solid fa-chevron-right pagination-icon chevron"></i></li>
           </ul>
         </nav>
       </section>}

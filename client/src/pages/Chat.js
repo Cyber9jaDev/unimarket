@@ -3,8 +3,6 @@ import './styles/chat.scss';
 import Conversation from '../components/Conversation';
 import ChatBox from '../components/ChatBox';
 import ChatService from '../services/ChatService';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useAppContext } from '../contexts/AppContext';
 import { io } from 'socket.io-client';
 
@@ -82,7 +80,7 @@ const Chat = () => {
             <div className={`conversation px-3 ${ windowWidth <= 768 && hideChatBox === true ? null : 'hide' }`}>
               <h4 className='fs-4'>Chats</h4>
               <div className="search-container d-flex align-items-center w-100 my-3">
-                <FontAwesomeIcon className='ps-2' icon={faSearch}/>
+              <i className="fa-solid fa-magnifying-glass ps-2"></i>
                 <input placeholder='Search messages or users' className='search w-100 px-3 py-2' type="search" name="search-chat" id="search-chat" />
               </div>
               { 

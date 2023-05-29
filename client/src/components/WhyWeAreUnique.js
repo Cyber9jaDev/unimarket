@@ -1,7 +1,5 @@
 import React from 'react';
 import './styles/WhyWeAreUnique.scss';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faHandshake, faBoxesStacked } from '@fortawesome/free-solid-svg-icons';
 
 
 const WhyWeAreUnique = () => {
@@ -11,17 +9,17 @@ const WhyWeAreUnique = () => {
       <p>We are dedicated to give that effortless platform where only student RULES. <br /> Student, student and ONLY student.</p>
       <div className='mt-5 container unique-details'>
         <div className="details-wrapper">
-          <FontAwesomeIcon className='icon icon-1' icon={faBriefcase} />
+          <i className="fa-solid fa-briefcase icon icon-1"></i>
           <h4 className='my-3'>Make deals within your campus</h4>
           <span className='text-center'>You don't need to go far from your college campus.</span>
         </div>
         <div className="details-wrapper">
-          <FontAwesomeIcon className='icon icon-2' icon={faHandshake} />
+          <i className="fa-solid fa-handshake icon icon-2"></i>
           <h4 className='my-3'>Trusted Purchase</h4>
           <span className='text-center'>Awesome! You are dealing with your college mate or any other near you.</span>
         </div>
         <div className="details-wrapper">
-          <FontAwesomeIcon className='icon icon-3' icon={faBoxesStacked} />
+          <i className="fa-solid fa-boxes-stacked icon icon-3"></i>
           <h4 className='my-3'>Multiple Products in a Single Ad.</h4>
           <span className='text-center'>You have books, notes, stationery, bikes to sell. Don't worry you can add these all items in a Single Ad.</span>
         </div>

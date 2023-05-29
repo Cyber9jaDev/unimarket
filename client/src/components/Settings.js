@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import avatar from '../assets/profile.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import Select from 'react-select';
 import schools from '../utilities/schools';
-// import Loading from './Loading';
 import { displayAlert, findSchoolByCode, refresh } from '../utilities/utils';
 import UsersService from '../services/UsersService';
 
@@ -69,7 +66,7 @@ const Settings = ({ currentUser }) => {
             <div className='display-picture-img-wrapper'>
               <img src={ currentUser.hasDisplayPicture ? currentUser.displayPicture.url : avatar } alt="display-pic" />
               <div className="icon-wrapper">
-                <FontAwesomeIcon icon={faEdit} />
+                <i className="fa-solid fa-pen-to-square"></i>
               </div>
             </div>
             <input accept='image/*' onChange={changeDisplayPicture} type="file" name="display-picture" id="display-picture" />

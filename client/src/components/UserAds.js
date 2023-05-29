@@ -1,7 +1,4 @@
 import React from 'react';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
-import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import img from '../assets/campus4.jpg';
 import formatNaira from "format-to-naira";
 import UsersService from '../services/UsersService';
@@ -31,7 +28,7 @@ const UserAds = ({ userAds, isLoading, hasError, screenWidth }) => {
         <div className="data-wrapper d-flex justify-content-between align-items-center">
           <div className="all adverts-wrapper">
             <div className="icon-wrapper d-flex align-items-center">
-              <FontAwesomeIcon className='icon' icon={faCheckCircle}/>
+              <i class="fa-regular fa-circle-check icon"></i>
             </div>
             <span className="text">Active</span>
             <div className="count-wrapper">
@@ -70,7 +67,7 @@ const UserAds = ({ userAds, isLoading, hasError, screenWidth }) => {
 
           <div className="action-container">
             <div className="action-wrapper delete">
-              <button onClick={() => deleteAdvert(ad._id)} className='btn'><FontAwesomeIcon className='icon' icon={faTrashCan} /> <span>Delete</span></button>
+              <button onClick={() => deleteAdvert(ad._id)} className='btn'><i class="fa-solid fa-trash-can icon"></i> <span>Delete</span></button>
             </div>
           </div>
         </div>)

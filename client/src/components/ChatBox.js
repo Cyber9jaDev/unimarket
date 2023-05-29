@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Avatar from '../assets/avatar.jpg';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import UsersService from '../services/UsersService';
 import { useAppContext } from '../contexts/AppContext';
 import ChatService from '../services/ChatService';
@@ -95,7 +93,7 @@ const ChatBox = ({ currentUser, messageFromSocketServer, windowWidth, setMessage
       <div className='d-flex flex-column'>
           {/* Top level of chat box  */}
         <div className='second-user-data d-flex align-items-center'>
-          { windowWidth <= 768 && <FontAwesomeIcon onClick={ handleChatBox } className='icon' icon={faChevronLeft} />}
+          { windowWidth <= 768 &&  <i onClick={ handleChatBox } className="fa-solid fa-chevron-left icon"></i>}
           <span className='fs-5 fw-bold ms-4'>{secondUserData?.name}</span>
           <img className='chat-image ms-auto my-auto' src={secondUserData?.hasDisplayPicture ? secondUserData.displayPicture.url :Avatar} alt="second-person-img" width={40} height={40} />
         </div>
