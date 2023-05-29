@@ -96,7 +96,7 @@ const ProductPreview = () => {
           <div className="container product-wrapper">
               
               <div className="address-container">
-                <i class="fa-solid fa-location-dot location-icon"></i>
+                <i className="fa-solid fa-location-dot location-icon"></i>
                 {product.city && <p className="city">{product.city}</p>}
                 <div className="v-bar"></div>
                 {product.createdAt && <p className="date">{moment(product.createdAt).format('dddd, Do MMM YYYY')}</p>}
@@ -114,7 +114,7 @@ const ProductPreview = () => {
                 </div>
 
                 <div className="icon-container icon-right-container">
-                  <i onClick={() => setCurrentIndex( current => currentIndex === images.length - 1 ? current : current + 1 ) } class="fa-solid fa-circle-chevron-right icon"></i>
+                  <i onClick={() => setCurrentIndex( current => currentIndex === images.length - 1 ? current : current + 1 ) } className="fa-solid fa-circle-chevron-right icon"></i>
                 </div>
               </div>
 
@@ -181,13 +181,13 @@ const ProductPreview = () => {
             <div className="contact-details-container">
               <a href='tel:08062128170' className="contact-details">
                 <div className="phone-icon-container">
-                <i className="fa-solid fa-phone-flip phone-icon"></i>
+                  <i className="fa-solid fa-phone-flip phone-icon"></i>
                 </div>
                 <span className='call-text'>Call</span>
               </a>
               <span onClick={openChatModal} className="contact-details">
                 <div className="message-icon-container">
-                <i class="fa-solid fa-message message-icon"></i>
+                <i className="fa-solid fa-message message-icon"></i>
                 </div>
                 <span className='chat-text'>Chat</span>
               </span>

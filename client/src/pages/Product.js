@@ -67,7 +67,6 @@ const Product = () => {
         searchText: values.searchText
       });
       
-      console.log(data);
       if (data) {
         setValues((prev) => ({ ...prev, products: data.products, totalPages: data.totalPages }));
         // dispatch({ type: FIND_BY_CATEGORY_SUCCESS });
@@ -131,7 +130,7 @@ const Product = () => {
             <div className={`col-sm-12 col-lg-3 mt-2 ${screenWidth < 992 && filterModalIsOpen ? 'filter-container' : 'hide'}`}>
               { screenWidth < 992 && filterModalIsOpen && <div className="arrow-icon-container py-2 mb-2 mt-1">
                   <div className="arrow-icon-wrapper" onClick={ () => { dispatch({ type: OPEN_FILTER_MODAL, payload:{ value: false }}) }}>
-                  <i class="fa-solid fa-chevron-left arrow-icon"></i>
+                  <i className="fa-solid fa-chevron-left arrow-icon"></i>
                     <span className='my-auto fs-4'>back</span>
                   </div>
                 </div>
