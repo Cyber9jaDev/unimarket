@@ -36,12 +36,12 @@ app.use(express.json({limit: '50mb'}));
 
 
 // JOHN SMILGA, when ready to deploy
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.resolve(__dirname, './client/build')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
-  });
-}
+// if(process.env.NODE_ENV === 'production'){
+//   app.use(express.static(path.resolve(__dirname, './client/build')));
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+//   });
+// }
 
 // morgan middleware, only runs in development mode
 if(process.env.NODE_ENV !== 'production'){ app.use(morgan('dev')) }
