@@ -29,7 +29,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 let users = [];
 
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT;
+const port = 3000
 
 app.use(cors());
 app.use(express.json({limit: '50mb'}));
@@ -53,7 +54,7 @@ io.on('connection', (socket) => {
       users.push({ userId: newUserId, socketId: socket.id });
     }
     io.emit('get-users', users);    // to all clients on this node (when using multiple nodes);
-  });
+  }); 
 
   socket.on('send-message', (data) => {
     const { receiverId } = data;
@@ -93,3 +94,6 @@ const startAPP = async () => {
 }
 
 startAPP();
+
+
+export default app;
