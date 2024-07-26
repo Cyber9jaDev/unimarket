@@ -92,19 +92,19 @@ export const AppProvider = ({ children }) => {
 
   const postAd = async ({ category, description, price, condition, name, school, images }) => {
     dispatch({ type: POSTAD_BEGINS });
-    if ( !category || !description || !price || !condition || !name || !school || images.length < 1 ) {
+    if (!category || !description || !price || !condition || !name || !school || images.length < 1) {
       return displayAlert("error", "Please fill all required fields");
     }
 
     try {
-      const { data } = await UsersService.PostAd({ 
-        category, description, price, condition, name, school, images, sellerEmail: currentUser.email, sellerId: currentUser.userId, 
-        createdDate: Date.parse(new Date()), modifiedDate: Date.parse(new Date()) 
-        });
-        dispatch({ type: POSTAD_SUCCESS, payload: { status: true } });
-        displayAlert("success", data.message);
+      const { data } = await UsersService.PostAd({
+        category, description, price, condition, name, school, images, sellerEmail: currentUser.email, sellerId: currentUser.userId,
+        createdDate: Date.parse(new Date()), modifiedDate: Date.parse(new Date())
+      });
+      dispatch({ type: POSTAD_SUCCESS, payload: { status: true } });
+      displayAlert("success", data.message);
     } catch (error) {
-      if ( error.response && (error.response.status === 500 || error.response.status === 403)) {
+      if (error.response && (error.response.status === 500 || error.response.status === 403)) {
         dispatch({ type: POSTAD_ERROR, payload: { status: true } });
         displayAlert("error", "Not authorized");
         removeUserFromLocalStorage();
